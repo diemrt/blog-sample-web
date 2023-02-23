@@ -1,4 +1,4 @@
-export default function PostsListComponent(props){
+export default function PostsList(props){
 
     if(typeof props !== "undefined") {
         return props.posts.map(post => (

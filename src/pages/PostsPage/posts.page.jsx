@@ -1,14 +1,17 @@
 import { useSelector } from "react-redux";
 import AddPost from "../../components/Posts/form/AddPost/AddPost.component";
-import PostsListComponent from "../../components/Posts/PostsList.component";
+import PostsList from "../../components/Posts/PostsList.component";
 
 export default function PostsPage(){
 
     const posts = useSelector(state => state.posts)
     return (
-        <section className="flex flex-col gap-4 w-80">
-            <AddPost />
-            <PostsListComponent posts={posts} />
-        </section>
+        <div className='flex flex-col p-4'>
+            <header className='p-4 text-indigo-500 font-bold'><h1 className='text-2xl'>Blog sample web</h1></header>
+            <section className="flex flex-col gap-4 w-80">
+                <AddPost />
+                <PostsList posts={posts} />
+            </section>
+        </div>
     )
 }
