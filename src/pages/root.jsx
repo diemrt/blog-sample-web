@@ -7,7 +7,7 @@ export default function Root(){
         <div className='w-96 sm:border-2 sm:border-slate-900'>
             <div className='sm:h-full sm:overflow-auto'>
                 <header className='flex text-center flex-col gap-3 p-4 font-serif border-b-2 border-slate-900'>
-                    <Link to="/posts" className='hover:underline text-5xl font-black text-slate-800'>Tryme.</Link>
+                    <Link to="/" className='hover:underline text-5xl font-black text-slate-800'>Tryme.</Link>
                     <small className="text-xs text-slate-500">un blog di esempio.</small>
                 </header>
                 <Outlet />

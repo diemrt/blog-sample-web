@@ -13,7 +13,7 @@ function App() {
       errorElement: <NotFoundPage />,
       children: [
         {
-          path: "/posts",
+          path: "/",
           element: <PostsPage />
         },
         {
