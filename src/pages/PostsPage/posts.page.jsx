@@ -7,9 +7,12 @@ export default function PostsPage(){
 
     const posts = useSelector(state => state.posts)
     return (
-        <div className='flex flex-col p-4'>
-            <header className='p-4 text-indigo-500 font-bold'><h1 className='text-2xl'>Blog sample web</h1></header>
-            <section className="flex flex-col gap-4 w-80">
+        <div className='flex flex-col'>
+            <header className='flex text-center flex-col gap-3 p-4 font-serif'>
+                <h1 className='text-5xl font-black text-slate-800'>Tryme.</h1>
+                <small className="text-xs text-slate-500">blog sample.</small>
+            </header>
+            <section className="flex flex-col gap-4">
                 <AddPost />
                 <PostsList posts={posts} />
             </section>
