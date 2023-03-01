@@ -1,8 +1,8 @@
 @tailwind base;
 
 :root {
-  --primary: rgb(252, 252, 252);
-  --secondary: rgba(184, 184, 184, 0.342);
+  --primary: rgba(252, 252, 252, 0);
+  --secondary: rgb(15 23 42);
 }
 
 textarea:focus, input:focus{
@@ -22,12 +22,10 @@ width: 15px;
 
 *::-webkit-scrollbar-track {
 background: var(--primary);
-border-radius: 5px;
 }
 
 *::-webkit-scrollbar-thumb {
 background-color: var(--secondary);
-border-radius: 14px;
 border: 3px solid var(--primary);
 }
 

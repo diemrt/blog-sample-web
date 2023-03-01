@@ -12,7 +12,7 @@ export default function PostsPage(){
                 <h1 className='text-5xl font-black text-slate-800'>Tryme.</h1>
                 <small className="text-xs text-slate-500">blog sample.</small>
             </header>
-            <section className="flex flex-col gap-4">
+            <section className="flex flex-col">
                 <AddPost />
                 <PostsList posts={posts} />
             </section>
