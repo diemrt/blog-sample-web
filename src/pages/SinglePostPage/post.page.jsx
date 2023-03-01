@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { Navigate, Outlet, useParams } from "react-router-dom"
+import { Navigate, useParams } from "react-router-dom"
 
 export default function PostPage(){
     const {postId} = useParams();
