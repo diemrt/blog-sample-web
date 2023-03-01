@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, ScrollRestoration } from "react-router-dom";
 
 export default function Root(){
 
@@ -13,6 +13,8 @@ export default function Root(){
                 <Outlet />
             </div>
         </div>
+        
+        <ScrollRestoration />
         </div>
     );
 }
