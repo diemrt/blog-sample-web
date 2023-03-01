@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom"
+import { Outlet, useParams } from "react-router-dom"
 
 export default function PostPage(){
     const {postId} = useParams();
@@ -14,11 +14,14 @@ export default function PostPage(){
     }
 
     return (
-        <section>
-            <article className="flex flex-col">
-                <h2>{post.title}</h2>
-                <p className="post-content">{post.description}</p>
-            </article>
-        </section>
+        <div className='flex flex-col'>
+            <section>
+                <article className="flex flex-col">
+                    <h2>{post.title}</h2>
+                    <p className="post-content">{post.description}</p>
+                </article>
+            </section>
+        <Outlet />
+        </div>
     )
 }

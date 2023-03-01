@@ -25,7 +25,7 @@ export default function AddPost() {
     }
 
     return (
-        <section className="flex flex-col border-t-2 p-10 gap-4 border-slate-900">
+        <section className="flex flex-col p-10 gap-4 border-slate-900">
             <h1 className="font-sans text-sm font-extrabold">_ WRITE</h1>
             <form className="flex flex-col items-center gap-4">
                 <input className="text-xl bg-transparent font-bold w-full text-left" type="text" id="postTitle" name="postTitle" value={title} onChange={onTitleChange} placeholder="Title" />

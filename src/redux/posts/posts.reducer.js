@@ -9,7 +9,7 @@ const initialState = [
     },
     {
         id: "sample2",
-        title: "aggiornamento sul blog 2023, come iniziare bene l'anno con noi",
+        title: "Aggiornamento sul blog 2023, come iniziare bene l'anno con noi",
         description: "Nam tincidunt lectus eu mi sagittis pulvinar. Cras lorem turpis, sagittis vitae odio et, vehicula vestibulum justo. Nulla rutrum risus a lacus aliquet, vitae ultrices urna bibendum. Pellentesque feugiat velit libero, at porta nunc sagittis et. Fusce lacinia et ipsum vel feugiat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nunc dignissim tortor at nisl laoreet, eu fringilla nisl luctus. Maecenas dignissim eu diam sed placerat."
     },
     {
