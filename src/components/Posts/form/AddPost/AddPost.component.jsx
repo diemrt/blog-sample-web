@@ -13,6 +13,7 @@ export default function AddPost() {
     const onSavePostClicked = () => {
         if(title && description){
             dispatch(postAdded({
+                id: nanoid(),
                 title,
                 description,
                 insertDate: "Oggi"

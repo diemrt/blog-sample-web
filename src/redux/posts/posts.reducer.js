@@ -1,17 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-const initialState = {sequential: 0, data: []}
+const initialState = []
 
 const postsSlice = createSlice({
     name: 'posts',
     initialState,
     reducers: {
         postAdded(state, action) {
-            state.data.push({
-                ...action.payload,
-                id: state.sequential
-            })
-            state.sequential++
+            state.push(action.payload)
         }
     }
 });
