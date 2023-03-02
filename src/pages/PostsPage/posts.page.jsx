@@ -10,7 +10,7 @@ export default function PostsPage(){
         <div className='flex flex-col'>
             <section className="flex flex-col">
                 <AddPost />
-                <PostsList posts={posts} />
+                <PostsList posts={[...posts].reverse()} />
             </section>
             
         <Outlet />
