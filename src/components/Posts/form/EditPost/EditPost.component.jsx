@@ -1,6 +1,8 @@
 import autosize from "autosize";
 import { useEffect, useRef, useState } from "react"
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { useDispatch } from "react-redux";
+import { postEdited } from "../../../../redux/posts/posts.reducer";
 
 export default function EditPost(props){
     const [title, setTitle] = useState(props?.post?.title);
@@ -8,8 +10,24 @@ export default function EditPost(props){
     const [isReading, setIsReading] = useState(true);
     const onTitleChange = (e) => setTitle(e.target.value);
     const onDescriptionChange = (e) => setDescription(e.target.value);
-    const onPageModeChange = () => setIsReading(!isReading);
+    const onPageModeChange = () => {
+        if(!isReading){
+            editPost();
+        }
+        setIsReading(!isReading);
+    };
     const titleRef = useRef(null);
+
+    const dispatch = useDispatch();
+    const editPost = () => {
+        if(title && description){
+            dispatch(postEdited({
+                id: props.post?.id,
+                title,
+                description
+            }))
+        }
+    }
 
     useEffect(() => {
         autosize(document.querySelectorAll('textarea'));

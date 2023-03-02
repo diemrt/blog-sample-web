@@ -16,8 +16,7 @@ export default function AddPost() {
             dispatch(postAdded({
                 id: nanoid(),
                 title,
-                description,
-                insertDate: "Oggi"
+                description
             }))
 
             setTitle('')
