@@ -1,6 +1,7 @@
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useSelector } from "react-redux";
 import { Navigate, useParams } from "react-router-dom"
+import EditPost from "../../components/Posts/form/EditPost/EditPost.component";
 
 export default function PostPage(){
     const {postId} = useParams();
@@ -10,12 +11,6 @@ export default function PostPage(){
         return <Navigate to="/posts" />;
 
     return (
-        <section className='flex flex-col p-10 gap-4'>
-            <article className="flex flex-col items-center gap-10">
-                <h2 className="font-serif text-3xl" id="heading">{post.title}</h2>
-                {typeof post.cover !== "undefined" ? (<LazyLoadImage className="h-60 object-cover border-2 border-slate-900" alt={post.id} src={`/images/${post.cover}.jpg`} placeholderSrc={`/images/placeholder_${post.cover}.jpg`} />) : null}
-                <p className="post-content">{post.description}</p>
-            </article>
-        </section>
+        <EditPost post={post} />
     )
 }
