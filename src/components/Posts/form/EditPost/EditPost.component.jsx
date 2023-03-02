@@ -20,13 +20,8 @@ export default function EditPost(props){
 
     const dispatch = useDispatch();
     const editPost = () => {
-        if(title && description){
-            dispatch(postEdited({
-                id: props.post?.id,
-                title,
-                description
-            }))
-        }
+        if(title && description)
+            dispatch(postEdited(props.post?.id, title, description));
     }
 
     useEffect(() => {

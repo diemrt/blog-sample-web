@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice, nanoid } from "@reduxjs/toolkit"
 
 const initialState = [
     {
@@ -24,15 +24,37 @@ const postsSlice = createSlice({
     name: 'posts',
     initialState,
     reducers: {
-        postAdded(state, action) {
-            state.push(action.payload)
+        postAdded: {
+            reducer(state, action) {
+                state.push(action.payload)
+            },
+            prepare(title, description) {
+                return {
+                    payload: {
+                        id: nanoid(),
+                        title,
+                        description
+                    }
+                }
+            }
         },
-        postEdited(state, action) {
-            const {id, title, description} = action.payload
-            const existing = state.find(post => post.id === id)
-            if(existing) {
-                existing.title = title;
-                existing.description = description;
+        postEdited: {
+            reducer(state, action) {
+                const {id, title, description} = action.payload
+                const existing = state.find(post => post.id === id)
+                if(existing) {
+                    existing.title = title;
+                    existing.description = description;
+                }
+            },
+            prepare(id, title, description){
+                return {
+                    payload: {
+                        id,
+                        title,
+                        description
+                    }
+                }
             }
         }
     }

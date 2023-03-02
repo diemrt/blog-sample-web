@@ -1,4 +1,3 @@
-import { nanoid } from "@reduxjs/toolkit";
 import autosize from "autosize";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
@@ -13,12 +12,7 @@ export default function AddPost() {
     const dispatch = useDispatch();
     const onSavePostClicked = () => {
         if(title && description){
-            dispatch(postAdded({
-                id: nanoid(),
-                title,
-                description
-            }))
-
+            dispatch(postAdded(title, description));
             setTitle('')
             setDescription('')
         }
