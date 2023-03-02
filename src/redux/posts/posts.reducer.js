@@ -65,4 +65,4 @@ export const {
     postEdited
 } = postsSlice.actions
 
-export default postsSlice
+export default postsSlice.reducer
