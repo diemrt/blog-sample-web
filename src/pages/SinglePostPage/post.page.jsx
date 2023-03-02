@@ -1,4 +1,3 @@
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useSelector } from "react-redux";
 import { Navigate, useParams } from "react-router-dom"
 import EditPost from "../../components/Posts/form/EditPost/EditPost.component";

@@ -20,8 +20,8 @@ export default function EditPost(props){
 
     return (
         <div className="flex flex-row justify-end p-5">
-            <button title={isReading ? "Modifica" : "Salva"} className="fixed h-12 w-12 sm:bottom-16 bottom-5 bg-slate-800 hover:bg-slate-900 active:translate-y-1 flex justify-center items-center text-white" onClick={onPageModeChange}>
-                <span className="material-symbols-outlined">
+            <button title={isReading ? "Modifica" : "Salva"} className="rotate-45 fixed h-12 w-12 sm:bottom-16 bottom-5 border-2 bg-pink-100 border-slate-900 hover:bg-slate-900 hover:text-white active:translate-y-1 items-center" onClick={onPageModeChange}>
+                <span className="material-symbols-outlined -rotate-45">
                     {isReading ? "edit_note" : "check"}
                 </span>
             </button>
