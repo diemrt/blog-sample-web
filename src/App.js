@@ -4,6 +4,7 @@ import Root from './components/Root';
 import NotFoundPage from './pages/404page';
 import PostsPage from './pages/PostsPage/Posts.page';
 import PostPage from './pages/SinglePostPage/Post.page';
+import UserPage from './pages/UserPage/User.page';
 
 function App() {
   const router = createBrowserRouter([
@@ -15,6 +16,10 @@ function App() {
         {
           path: "/",
           element: <PostsPage />
+        },
+        {
+          path: "/user",
+          element: <UserPage />
         },
         {
           path: "/posts/:postId",

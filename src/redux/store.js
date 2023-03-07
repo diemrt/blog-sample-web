@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
+import firebaseReducer from "./firebase/firebase.reducer";
 import postsReducer from "./posts/posts.reducer";
-import userReducer from "./user/user.reducer";
+import usersReducer from "./users/users.reducer";
 
 export default configureStore({
     reducer: {
         posts: postsReducer,
-        user: userReducer
+        users: usersReducer,
+        firebase: firebaseReducer
     }
 })
