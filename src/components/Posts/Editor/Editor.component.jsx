@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function Editor(WrappedComponent, props){
     const [title, setTitle] = useState(props?.post?.title);
     const [description, setDescription] = useState(props?.post?.description);
-    const [isLocked, setIsLocked] = useState(false);
+    const [isLocked, setIsLocked] = useState(props?.lockState);
     const onTitleChange = (e) => setTitle(e.target.value);
     const onDescriptionChange = (e) => setDescription(e.target.value);
     const onSave = (dispatch) => {
@@ -12,6 +12,6 @@ export default function Editor(WrappedComponent, props){
         }
     };
 
-    return <WrappedComponent {...{title, setTitle, description, setDescription, isLocked, setIsLocked, onTitleChange, onDescriptionChange, onSave}} />;
+    return <WrappedComponent {...{title, setTitle, description, setDescription, isLocked, setIsLocked, onTitleChange, onDescriptionChange, onSave, editorProps: props}} />;
 
 }

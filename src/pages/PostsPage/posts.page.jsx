@@ -6,7 +6,7 @@ import ListWrapper from "../../components/Posts/ListWrapper/ListWrapper.componen
 
 export default function PostsPage(){
     const posts = useSelector(state => state.posts);
-    const postEditor = Editor(AddPost, null);
+    const postEditor = Editor(AddPost, {...{lockState: false}});
     return (
         <div className='flex flex-col'>
             <section className="flex flex-col">
