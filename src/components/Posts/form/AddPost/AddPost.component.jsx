@@ -1,23 +1,19 @@
-import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { postAdded } from "../../../../redux/posts/posts.reducer";
 import PostDescription from "../PostDescription/PostDescription.components";
 import PostTitle from "../PostTitle/PostTitle.component";
 
-export default function AddPost() {
-    const [title, setTitle] = useState('')
-    const [description, setDescription] = useState('')
-    const onTitleChange = (e) => setTitle(e.target.value);
-    const onDescriptionChange = (e) => setDescription(e.target.value);
-
+export default function AddPost(props) {
+    const {title, description, setTitle, setDescription, onTitleChange, onDescriptionChange, onSave} = props;
     const dispatch = useDispatch();
-    const onSavePostClicked = () => {
+    const dispatchOnCondition = () => {
         if(title && description){
             dispatch(postAdded(title, description));
-            setTitle('')
-            setDescription('')
+            setTitle('');
+            setDescription('');
         }
-    }
+    };
+    const addPost = () => onSave(dispatchOnCondition);
 
     return (
         <section className="flex flex-col p-10 gap-4 border-slate-900">
@@ -25,7 +21,7 @@ export default function AddPost() {
             <form className="flex flex-col items-center gap-4">
                 <PostTitle {...{title, onTitleChange, isLocked: false}} />
                 <PostDescription {...{description, onDescriptionChange, isLocked: false}} />
-                <button type="button" className="flex flex-row items-center gap-2 p-2 pr-6 pl-6 border-2 border-slate-900 hover:bg-slate-900 hover:text-white active:translate-y-1 font-sans font-bold text-sm w-fit" onClick={onSavePostClicked}>
+                <button type="button" className="flex flex-row items-center gap-2 p-2 pr-6 pl-6 border-2 border-slate-900 hover:bg-slate-900 hover:text-white active:translate-y-1 font-sans font-bold text-sm w-fit" onClick={addPost}>
                     SALVA
                     <span className="material-symbols-outlined">
                         arrow_right_alt
