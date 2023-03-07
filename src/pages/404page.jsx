@@ -16,7 +16,7 @@ export default function NotFoundPage(){
                 </div>
                 <div className="flex flex-col items-center gap-4">
                     <span className="text-sm">La pagina che stai cercando non esiste.</span>
-                    <Link to="/posts" className="flex flex-row items-center gap-2 p-2 pr-6 pl-6 border-2 bg-white text-slate-900 active:translate-y-1 font-sans font-bold text-sm rounded-full w-fit">
+                    <Link to="/" className="flex flex-row items-center gap-2 p-2 pr-6 pl-6 border-2 bg-white text-slate-900 active:translate-y-1 font-sans font-bold text-sm w-fit">
                         RIPORTAMI A CASA
                         <span className="material-symbols-outlined">
                             arrow_right_alt
