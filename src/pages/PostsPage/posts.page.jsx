@@ -5,7 +5,8 @@ import AddPost from "../../components/Posts/form/AddPost/AddPost.component";
 import ListWrapper from "../../components/Posts/ListWrapper/ListWrapper.component";
 
 export default function PostsPage(){
-    const posts = useSelector(state => state.posts);
+    const loggedUser = useSelector(state => state.firebase);
+    const posts = useSelector(state => state.posts.filter(p => p.userId === loggedUser.userId));
     const postEditor = Editor(AddPost, {...{lockState: false}});
     return (
         <div className='flex flex-col'>

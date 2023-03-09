@@ -1,14 +1,15 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { postAdded } from "../../../../redux/posts/posts.reducer";
 import PostDescription from "../PostDescription/PostDescription.components";
 import PostTitle from "../PostTitle/PostTitle.component";
 
 export default function AddPost(props) {
     const {title, description, isLocked, setTitle, setDescription, onTitleChange, onDescriptionChange, onSave} = props;
+    const loggedUser = useSelector(state => state.firebase);
     const dispatch = useDispatch();
     const dispatchOnCondition = () => {
         if(title && description){
-            dispatch(postAdded(title, description));
+            dispatch(postAdded(title, description, loggedUser.userId));
             setTitle('');
             setDescription('');
         }
