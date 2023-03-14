@@ -50,6 +50,20 @@ const postsSlice = createSlice({
                 }
             }
         }
+    },
+    extraReducers(builder) {
+        builder
+            .addCase(fetchPosts.pending, (state, action) => {
+                state.status = 'loading'
+            })
+            .addCase(fetchPosts.fulfilled, (state, action) => {
+                state.status = 'succeeded';
+                state.posts = state.posts.concat(action.payload);
+            })
+            .addCase(fetchPosts.rejected, (state, action) => {
+                state.status = 'failed';
+                state.error = action.error.message
+            })
     }
 });
 
@@ -60,5 +74,5 @@ export const {
 
 export default postsSlice.reducer
 
-export const getAllPosts = (state, userId) => state.posts.posts.filter(p => p.userId === userId)
+export const getAllPosts = (state) => state.posts.posts
 export const getPostById = (state, postId) => state.posts.posts.find(p => p.id === postId)
