@@ -1,23 +1,15 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchPosts, getAllPosts } from "../../../redux/posts/posts.reducer";
+import { useGetPostsQuery } from "../../../redux/api/apiSlice";
 import RenderItems from "../../RenderItems/RenderItems.component";
 import ShowOnCondition from "../../ShowOnCondition/ShowOnCondition.component";
 import PostPreview from "../PostPreview/PostPreview.component";
 
-export default function ListWrapper(props){    
-    const dispatch = useDispatch();
-    const posts = useSelector(getAllPosts);
-    const postStatus = useSelector(state => state.posts.status)
-
-    useEffect(() => {
-        if(postStatus === 'idle'){
-            dispatch(fetchPosts());
-        }
-    }, [postStatus, dispatch])
-
+export default function ListWrapper(){
+    const {
+        data: posts,
+        isSuccess
+    } = useGetPostsQuery()
 
     const PostsPreview = RenderItems(posts, PostPreview);
-    const list = ShowOnCondition(typeof posts !== "undefined", PostsPreview)
+    const list = ShowOnCondition(isSuccess, PostsPreview)
     return list;
 }
